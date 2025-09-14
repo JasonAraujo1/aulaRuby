@@ -11,5 +11,6 @@ end
 
 nomePedro = "pedro"
 nomeAna = "ana"
+nome3 = "ss"
 
 nomes(nomePedro, nomeAna)
