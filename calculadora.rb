@@ -24,6 +24,5 @@ while true
             exit
     end
 
-
     puts "o resultado é: #{res}"
 end
