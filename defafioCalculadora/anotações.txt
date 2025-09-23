@@ -1,17 +1,24 @@
 Método de instância (def nome)
     def initialize
         @res = 0
-        
+
 Precisa de .new
-
 Cada objeto tem seus próprios dados (@res)
-
 Mais flexível para múltiplos usos
 
+Quando houver objetos diferentes (independentes entre si)
+→ usa initialize + métodos de instância.
+Assim cada objeto tem seu próprio estado.
+👉 Exemplo: várias calculadoras abertas, cada uma com seu próprio resultado.
+
+
+
 Método de classe (def self.nome)
-
 Não precisa de .new
-
 Estado é compartilhado pela classe inteira (@res da classe)
-
 Mais simples quando você quer uma só versão centralizada
+
+Quando for o mesmo objeto (um estado único e compartilhado)
+→ usa self. (métodos de classe).
+Assim não precisa criar objeto com .new, a própria classe já é “a calculadora global”.
+👉 Exemplo: só existe uma calculadora no programa inteiro.
