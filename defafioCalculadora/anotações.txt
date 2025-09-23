@@ -1,0 +1,17 @@
+Método de instância (def nome)
+    def initialize
+        @res = 0
+        
+Precisa de .new
+
+Cada objeto tem seus próprios dados (@res)
+
+Mais flexível para múltiplos usos
+
+Método de classe (def self.nome)
+
+Não precisa de .new
+
+Estado é compartilhado pela classe inteira (@res da classe)
+
+Mais simples quando você quer uma só versão centralizada
