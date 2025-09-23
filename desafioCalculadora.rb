@@ -1,11 +1,9 @@
 
 class DesafioCalculadora
 
-    def initialize
        @res = 0.0
-    end
 
-    def calculadora(num1, num2, operador)
+    def self.calculadora(num1, num2, operador)
         case operador
         when "+"
             @res = num1 + num2
@@ -27,7 +25,7 @@ class DesafioCalculadora
         return @res
     end
 
-    def dados
+    def self.dados
         loop do
             if @res == 0 
                 puts "escolha um número"
@@ -43,14 +41,14 @@ class DesafioCalculadora
             puts "escolha outro número"
             num2 = gets.chomp.to_f
 
-            @res = calculadora(num1,num2,operador)
+            @res = self.calculadora(num1,num2,operador)
         end
 
     end
 
 end
     
-DesafioCalculadora.new.dados
+DesafioCalculadora.dados
 
 
 
