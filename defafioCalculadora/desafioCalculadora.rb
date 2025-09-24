@@ -1,11 +1,12 @@
 
 class DesafioCalculadora
 
-    def self.init
+    def initialize
        @res = 0.0
+       @operadores = ["+","-","*","/"]
     end
 
-    def self.calculadora(num1, num2, operador)
+    def calculadora(num1, num2, operador)
         case operador
         when "+"
             @res = num1 + num2
@@ -23,12 +24,12 @@ class DesafioCalculadora
             exit
         end
 
-        self.resultado
+        resultado
         return @res
     end
 
-    def self.validacaoOperador(operador)
-        if ["+","-","*","/"].include?(operador)
+    def validacaoOperador(operador)
+        if @operadores.include?(operador)
             operador
         else
             puts "operador inválido"
@@ -36,7 +37,8 @@ class DesafioCalculadora
         end
     end
 
-    def self.validacaoNumero(valor)
+
+    def validacaoNumero(valor)
         if valor.strip.empty?
             puts "número vazio"
             return nil
@@ -51,13 +53,13 @@ class DesafioCalculadora
         num
     end
 
-    def self.dados
-        self.init
+    def dados
+        
         loop do
             if @res == 0
                 puts "escolha um número"
                 entrada1 = gets.chomp             
-                num1 = self.validacaoNumero(entrada1)
+                num1 = validacaoNumero(entrada1)
                 next if num1.nil?                 
             else
                 puts "resultado anterior #{@res}"
@@ -67,24 +69,24 @@ class DesafioCalculadora
             puts "escolha um operador"
             operador = gets.chomp
 
-            operador = self.validacaoOperador(operador)
+            operador = validacaoOperador(operador)
             next if operador.nil?
 
             puts "escolha outro número"
             entrada2 = gets.chomp
-            num2 = self.validacaoNumero(entrada2)
+            num2 = validacaoNumero(entrada2)
             next if num2.nil?
 
-            @res = self.calculadora(num1,num2,operador)
+            @res = calculadora(num1,num2,operador)
         end
     end
 
-    def self.resultado
+    def resultado
         puts "o resultado é #{@res}"
     end
 end
     
-DesafioCalculadora.dados
+DesafioCalculadora.new.dados
 
 
 
