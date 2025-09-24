@@ -1,12 +1,12 @@
 
-class DesafioCalculadora
+class Calculadora
 
     def initialize
        @res = 0.0
        @operadores = ["+","-","*","/"]
     end
 
-    def calculadora(num1, num2, operador)
+    def calculo(num1, num2, operador)
         case operador
         when "+"
             @res = num1 + num2
@@ -77,7 +77,7 @@ class DesafioCalculadora
             num2 = validacaoNumero(entrada2)
             next if num2.nil?
 
-            @res = calculadora(num1,num2,operador)
+            @res = calculo(num1,num2,operador)
         end
     end
 
@@ -86,7 +86,7 @@ class DesafioCalculadora
     end
 end
     
-DesafioCalculadora.new.dados
+Calculadora.new.dados
 
 
 
