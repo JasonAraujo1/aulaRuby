@@ -1,7 +1,8 @@
-require_relative 'operacoes/add'
-require_relative 'operacoes/div'
-require_relative 'operacoes/mul'
-require_relative 'operacoes/sub'
+require_relative '../operacoes/add'
+require_relative '../operacoes/sub'
+require_relative '../operacoes/mul'
+require_relative '../operacoes/div'
+
 
 class DesafioCalculadora
 
