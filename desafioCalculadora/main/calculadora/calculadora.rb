@@ -7,6 +7,7 @@ require_relative '../operacoes/div'
 class DesafioCalculadora
 
     def initialize
+      @operadores = ["+","-","*","/"]
        @res = 0.0
        @add = Add.new
        @div = Div.new
@@ -36,30 +37,62 @@ class DesafioCalculadora
         return @res
     end
 
+    def validacaoOperador(operador)
+        if @operadores.include?(operador)
+            operador
+        else
+            puts "operador inválido"
+            nil
+        end
+    end
+
+    def validacaoNumero(valor)
+        if valor.strip.empty?
+            puts "número vazio"
+            return nil
+        end
+
+        num = valor.to_f
+        if num < 0
+            puts "número negativo"
+            return nil
+        end
+
+        num
+    end
+
     def dados
+        
         loop do
-            if @res == 0 
+            if @res == 0
                 puts "escolha um número"
-                num1 = gets.chomp.to_f
+                entrada1 = gets.chomp             
+                num1 = validacaoNumero(entrada1)
+                next if num1.nil?                 
             else
                 puts "resultado anterior #{@res}"
                 num1 = @res
             end
-
+          
             puts "escolha um operador"
             operador = gets.chomp
 
+            operador = validacaoOperador(operador)
+            next if operador.nil?
+
             puts "escolha outro número"
-            num2 = gets.chomp.to_f
+            entrada2 = gets.chomp
+            num2 = validacaoNumero(entrada2)
+            next if num2.nil?
 
             @res = calculadora(num1,num2,operador)
         end
-
     end
 
+    def resultado
+        puts "o resultado é #{@res}"
+    end
 end
     
 DesafioCalculadora.new.dados
-
-
 
